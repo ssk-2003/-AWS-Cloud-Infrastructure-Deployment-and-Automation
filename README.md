@@ -43,36 +43,35 @@ The project includes:
 ## 🚀 AWS Infrastructure Deployment Steps (Flowchart)
 
 START
-  │
-  ├── 1️⃣ VPC Setup
-  │     └─ Create Custom VPC, Subnets (Public/Private), IGW, Route Tables
-  │
-  ├── 2️⃣ S3 Bucket
-  │     └─ Store static content and backups
-  │
-  ├── 3️⃣ EFS Setup
-  │     └─ Create EFS and mount targets in VPC subnets
-  │
-  ├── 4️⃣ EC2 Instances with NGINX
-  │     └─ Launch EC2 (Ubuntu), install NGINX, mount EFS, deploy static site
-  │
-  ├── 5️⃣ RDS Database (MySQL)
-  │     └─ Launch RDS in private subnet, configure DB, security groups
-  │
-  ├── 6️⃣ Application Load Balancer (ALB)
-  │     └─ Create Target Group, attach EC2, set listeners (HTTP/HTTPS)
-  │
-  ├── 7️⃣ Auto Scaling Group (ASG)
-  │     └─ Define Launch Template, ASG rules (CPU, traffic-based scaling)
-  │
-  ├── 8️⃣ CloudFront CDN
-  │     └─ Set origin as ALB or S3, enable caching and SSL
-  │
-  ├── 9️⃣ Route 53 + ACM (SSL)
-  │     └─ Buy/Connect domain, add DNS records, enable HTTPS via ACM
-  │
-  └── ✅ Deployment Complete!
-  
+│
+├── 1️⃣ VPC Setup
+│ └─ Create Custom VPC, Subnets (Public/Private), IGW, Route Tables
+│
+├── 2️⃣ S3 Bucket
+│ └─ Store static content and backups
+│
+├── 3️⃣ EFS Setup
+│ └─ Create EFS and mount targets in VPC subnets
+│
+├── 4️⃣ EC2 Instances with NGINX
+│ └─ Launch EC2 (Ubuntu), install NGINX, mount EFS, deploy static site
+│
+├── 5️⃣ RDS Database (MySQL)
+│ └─ Launch RDS in private subnet, configure DB, security groups
+│
+├── 6️⃣ Application Load Balancer (ALB)
+│ └─ Create Target Group, attach EC2, set listeners (HTTP/HTTPS)
+│
+├── 7️⃣ Auto Scaling Group (ASG)
+│ └─ Define Launch Template, ASG rules (CPU, traffic-based scaling)
+│
+├── 8️⃣ CloudFront CDN
+│ └─ Set origin as ALB or S3, enable caching and SSL
+│
+├── 9️⃣ Route 53 + ACM (SSL)
+│ └─ Buy/Connect domain, add DNS records, enable HTTPS via ACM
+│
+└── ✅ Deployment Complete!
 ---
 
 ## 🛠 Technologies Used
