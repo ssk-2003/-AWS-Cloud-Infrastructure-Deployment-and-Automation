@@ -41,47 +41,36 @@ The project includes:
 ---
 
 ## 🚀 AWS Infrastructure Deployment Steps (Flowchart)
-
 START
- │
- ▼
-1. VPC Setup
-    └─ Custom VPC, Public & Private Subnets, IGW, Route Tables
- │
- ▼
-2. S3 Bucket
-    └─ Store static assets and backups
- │
- ▼
-3. EFS Setup
-    └─ Create EFS, mount targets in private subnets
- │
- ▼
-4. EC2 Instances (NGINX)
-    └─ Install NGINX, mount EFS, deploy app
- │
- ▼
-5. RDS (MySQL)
-    └─ Launch DB in private subnet, set security groups
- │
- ▼
-6. Application Load Balancer (ALB)
-    └─ Attach EC2 to target group, set listeners
- │
- ▼
-7. Auto Scaling Group (ASG)
-    └─ Configure launch template & scaling policies
- │
- ▼
-8. CloudFront CDN
-    └─ Connect to ALB/S3, enable caching & SSL
- │
- ▼
-9. Route 53 + ACM (SSL)
-    └─ Connect domain, add DNS records, enable HTTPS
- │
- ▼
-✅ Deployment Complete!
+│
+├── 1️⃣ VPC Setup  
+│   └─ Create VPC, Public & Private Subnets, IGW, Route Tables
+│
+├── 2️⃣ S3 Bucket  
+│   └─ Store static assets (e.g., images, backups)
+│
+├── 3️⃣ EFS (Elastic File System)  
+│   └─ Create & mount across EC2 in private subnets
+│
+├── 4️⃣ EC2 with NGINX  
+│   └─ Launch Ubuntu EC2, install NGINX, mount EFS, deploy app
+│
+├── 5️⃣ RDS (MySQL)  
+│   └─ Launch DB in private subnet, configure with security groups
+│
+├── 6️⃣ Application Load Balancer (ALB)  
+│   └─ Create Target Group, attach EC2s, set HTTP/HTTPS listeners
+│
+├── 7️⃣ Auto Scaling Group (ASG)  
+│   └─ Define launch template & scaling policies (CPU/traffic)
+│
+├── 8️⃣ CloudFront CDN  
+│   └─ Cache from ALB/S3, enable SSL for faster global access
+│
+├── 9️⃣ Route 53 + ACM (SSL)  
+│   └─ Connect domain, add DNS records, apply SSL certificate
+│
+└── ✅ Done! Production-ready AWS deployment.
 
 ---
 
