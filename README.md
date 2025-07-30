@@ -40,6 +40,41 @@ The project includes:
 
 ---
 
+## 🚀 AWS Infrastructure Deployment Steps (Flowchart)
+
+START
+  │
+  ├── 1️⃣ VPC Setup
+  │     └─ Create Custom VPC, Subnets (Public/Private), IGW, Route Tables
+  │
+  ├── 2️⃣ S3 Bucket
+  │     └─ Store static content and backups
+  │
+  ├── 3️⃣ EFS Setup
+  │     └─ Create EFS and mount targets in VPC subnets
+  │
+  ├── 4️⃣ EC2 Instances with NGINX
+  │     └─ Launch EC2 (Ubuntu), install NGINX, mount EFS, deploy static site
+  │
+  ├── 5️⃣ RDS Database (MySQL)
+  │     └─ Launch RDS in private subnet, configure DB, security groups
+  │
+  ├── 6️⃣ Application Load Balancer (ALB)
+  │     └─ Create Target Group, attach EC2, set listeners (HTTP/HTTPS)
+  │
+  ├── 7️⃣ Auto Scaling Group (ASG)
+  │     └─ Define Launch Template, ASG rules (CPU, traffic-based scaling)
+  │
+  ├── 8️⃣ CloudFront CDN
+  │     └─ Set origin as ALB or S3, enable caching and SSL
+  │
+  ├── 9️⃣ Route 53 + ACM (SSL)
+  │     └─ Buy/Connect domain, add DNS records, enable HTTPS via ACM
+  │
+  └── ✅ Deployment Complete!
+  
+---
+
 ## 🛠 Technologies Used
 
 - Amazon VPC  
@@ -66,6 +101,26 @@ The project includes:
 
 User → Route 53 → CloudFront → ALB → EC2 → RDS
 
+
+---
+🔄 Explanation of Each Step
+👤 User
+→ The end-user accessing your application via a web browser.
+
+🌐 Route 53
+→ DNS service that routes user traffic to the correct resource (your domain like satish.shop points to CloudFront or ALB).
+
+⚡ CloudFront (CDN)
+→ Delivers cached content (like images, static files) quickly from edge locations. Improves performance and reduces latency.
+
+🔀 ALB (Application Load Balancer)
+→ Distributes incoming requests across EC2 instances. It can also handle HTTPS termination using ACM SSL certificates.
+
+💻 EC2 (with NGINX)
+→ Your web server hosting the application, pulling shared content from EFS and possibly interacting with RDS.
+
+🛢️ RDS (MySQL)
+→ Your backend database storing dynamic content, user data, etc.
 
 ---
 
