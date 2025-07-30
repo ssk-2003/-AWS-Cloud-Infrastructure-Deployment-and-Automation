@@ -41,6 +41,7 @@ The project includes:
 ---
 
 ## 🚀 AWS Infrastructure Deployment Steps (Flowchart)
+
 ```
 [Start]
   │
@@ -104,6 +105,7 @@ User → Route 53 → CloudFront → ALB → EC2 → RDS
 
 ---
 🔄 Explanation of Each Step
+
 👤 User
 → The end-user accessing your application via a web browser.
 
