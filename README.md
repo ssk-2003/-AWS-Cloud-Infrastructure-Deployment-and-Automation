@@ -3,7 +3,6 @@
 This project demonstrates how to deploy a scalable, secure, and resilient cloud infrastructure using Amazon Web Services (AWS). It covers the full setup process, from creating a VPC to configuring EC2, RDS, ALB, CloudFront, and Route 53.
 
 📄 **Author**: Satish Kumar  
-🆔 **Aspirant ID**: 297715  
 📘 **Report**: [AWS Project Full Report by Satish Kumar.pdf](AWS%20Project%20Full%20Report%20by%20Satish%20Kumar.pdf)
 
 ---
@@ -65,3 +64,19 @@ The project includes:
 
 ## 🌐 Final Workflow Diagram (Conceptual)
 
+User → Route 53 → CloudFront → ALB → EC2 → RDS
+
+
+---
+
+## 📝 Notes
+
+- The report includes actual AWS Console steps and CLI commands.
+- Designed for practical deployment of a static or dynamic web application.
+
+---
+
+## 📬 Contact
+
+For any queries or feedback:  
+📧 satishkumarcse2003@gmail.com
